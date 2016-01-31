@@ -32,11 +32,16 @@ require_once './lib/hl7.php';
  * 3. ส่งข้อมูลเข้าฐานข้อมูล
  * 
  */
-$path_filename = "./lis/res/151010206004213.hl7";
- try {
-        $hl7 = new HL7($path_filename);
+$path_foder = "./lis/res/*.hl7";
+$list_files = glob($path_foder);
+foreach ($list_files as $filename) {
+    printf("$filename size " . filesize($filename) . "  " . date('Ymd H:i:s') . "\n");
+    try {
+        
+        $name = 'OBX';
+        $hl7 = new HL7($filename);
         print_r($hl7->get_message());
-        print_r($hl7->segment_count);
     } catch (Exception $ex) {
         echo 'Caught exception: ', $ex->getMessage(), "\n";
     }
+}

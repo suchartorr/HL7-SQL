@@ -23,20 +23,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-require_once './lib/hl7.php';
 
 /**
- * การอ่านไฟล์ข้อมูลผลแลปผู้ป่วยจาก LIS
- * 1. อ่านไฟล์ HL7 ผลแลปอยู่ในโฟลเดอร์
- * 2. วิเคราะห์ไฟล์แยกส่วนข้อมูลเพื่อสามารถจัดเตรียมนำเข้าฐานข้อมูลได้
- * 3. ส่งข้อมูลเข้าฐานข้อมูล
- * 
+ * Description of hl7_segment
+ *
+ * @author suchart.orr@gmail.com
  */
-$path_filename = "./lis/res/151010206004213.hl7";
- try {
-        $hl7 = new HL7($path_filename);
-        print_r($hl7->get_message());
-        print_r($hl7->segment_count);
-    } catch (Exception $ex) {
-        echo 'Caught exception: ', $ex->getMessage(), "\n";
-    }
+class hl7_segment {
+    public $name ="";
+    public $index = 0;
+    public $fields = array();
+}
