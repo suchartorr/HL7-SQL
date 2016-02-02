@@ -108,8 +108,7 @@ class hl7 {
     }
 
     /**
-     * คืนค่าอะเรย์อินเด็กซ์ 2 มิติ
-     * ถ้าต้องการ segment MSH อินเด็กซ์เป็น ["MSH"]["^~\&"];
+     * คืนค่าอะเรย์ตามบรรทัดในไฟล์ HL7 ตามโครงสร้าง hl7_segment
      * @return type array
      */
     public function get_message() {
