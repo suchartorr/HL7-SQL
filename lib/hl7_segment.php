@@ -26,7 +26,7 @@
 
 /**
  * Description of hl7_segment
- *
+ * @todo เตรียมนำไปรวมกันใน hl7.php ถ้าไม่มี function อื่นๆ เพิ่ม
  * @author suchart.orr@gmail.com
  */
 class hl7_segment {
